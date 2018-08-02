@@ -27,6 +27,7 @@ router.get('/api/projects', user.service.getProjects);
 router.get('/api/projects/:userName', user.service.getProjectsByUserName);
 
 router.get('/api/ashare/:code', user.service.getCompany);
+router.get('/api/roe/:code', user.service.getRoeByCompany);
 
 router.get('/api/project-detail/:id', user.service.getProjectDetail);
 router.get('/api/profile/:userName', user.service.getProfile);

@@ -7,6 +7,7 @@ const Project = require("../models/project");
 const User = require("../models/user");
 const Profile = require("../models/profile");
 const AShare = require("../models/a-share");
+const ROE = require("../models/roe");
 
 let cloudinary = require("cloudinary");
 cloudinary.config({
@@ -109,6 +110,16 @@ let service = {
             } else {
               console.log(co);
               res.json(co);
+            }
+        });
+    },
+
+    getRoeByCompany: (req, res) => {
+        ROE.findOne({code: req.params.code}, (err, roe) => {
+            if (err) {
+                res.json({result: "Company of specified code not found"});
+            } else {
+                res.json(roe);
             }
         });
     },
