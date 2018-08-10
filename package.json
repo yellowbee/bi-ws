@@ -24,6 +24,7 @@
     "mongoose": "^5.0.15",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.4",
+    "querystring": "^0.2.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
