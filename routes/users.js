@@ -8,7 +8,7 @@ const User = require("../models/user");
 const Profile = require("../models/profile");
 const AShare = require("../models/a-share");
 const ROE = require("../models/roe");
-const Da = require("../models/da");
+const DA = require("../models/da");
 const querystring = require("querystring");
 
 let cloudinary = require("cloudinary");
@@ -140,20 +140,9 @@ let service = {
         });
     },
 
-    getDaByCompany: (req, res) => {
-        Da.findOne({code: req.params.code}, (err, da) => {
-            if (err) {
-                res.json({result: "Company of specified code not found"});
-            } else {
-                res.json(da);
-            }
-        });
-    },
-
-    getDasByCompanies: (req, res) => {
+    getDAsByCompanies: (req, res) => {
         let codes = querystring.parse(req.params.codesstr).codes;
-        console.log(codes);
-        Da.find({
+        DA.find({
             'code': {$in: codes}
         }, (err, das) => {
             if (err) {

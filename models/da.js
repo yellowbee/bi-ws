@@ -11,7 +11,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const DaSchema = new Schema(
+const DASchema = new Schema(
     {
         code: String,
         date: [String],
@@ -20,5 +20,5 @@ const DaSchema = new Schema(
     { collection: "da" }
 );
 
-const Da = mongoose.model("Da", DaSchema);
-module.exports = Da;
+const DA = mongoose.model("DA", DASchema);
+module.exports = DA;
