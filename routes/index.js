@@ -7,8 +7,8 @@ let express = require('express');
 let router = express.Router();
 
 let auth = require('./auth.js');
-let products = require('./products.js');
 let user = require('./users.js');
+let stockIdx = require('./stock-index.js');
 
 /*
  * Routes that can be accessed by any one
@@ -30,6 +30,16 @@ router.get('/api/ashare/:code', user.service.getCompany);
 router.get('/api/roe/:code', user.service.getRoeByCompany);
 router.get('/api/roes/:codesstr', user.service.getRoesByCompanies);
 router.get('/api/das/:codesstr', user.service.getDAsByCompanies);
+
+router.get('/api/idx-a', stockIdx.getIdxA);
+router.get('/api/idx-b', stockIdx.getIdxB);
+router.get('/api/idx-md-sm', stockIdx.getIdxMdSm);
+/*router.get('/api/idx-sh-a', user.service.getShanghaiA);
+router.get('/api/idx-sh-b', user.service.getShanghaiB);
+router.get('/api/idx-startup', user.service.getStartup);
+router.get('/api/idx-sz-a', user.service.getShenzhenA);
+router.get('/api/idx-sz-b', user.service.getShenzhenB);
+router.get('/api/idx-sz-main-a', user.service.getShenzhenMainA);*/
 
 router.get('/api/project-detail/:id', user.service.getProjectDetail);
 router.get('/api/profile/:userName', user.service.getProfile);

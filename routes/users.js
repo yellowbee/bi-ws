@@ -9,6 +9,7 @@ const Profile = require("../models/profile");
 const AShare = require("../models/a-share");
 const ROE = require("../models/roe");
 const DA = require("../models/da");
+const IndexA = require("../models/indexA");
 const querystring = require("querystring");
 
 let cloudinary = require("cloudinary");
@@ -291,19 +292,4 @@ let genToken = function(user) {
   };*/
 };
 
-let data = [
-  {
-    username: "Alice",
-    password: "pass01"
-  },
-  {
-    username: "Berry",
-    password: "pass02"
-  },
-  {
-    username: "Cathy",
-    password: "pass03"
-  }
-];
-
-module.exports = { service: service, data: data };
+module.exports = { service: service };
