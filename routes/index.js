@@ -9,7 +9,7 @@ let router = express.Router();
 let auth = require('./auth.js');
 let user = require('./users.js');
 let stockIdx = require('./stock-index.js');
-
+let stdParam = require('./std-param');
 /*
  * Routes that can be accessed by any one
  */
@@ -28,7 +28,12 @@ router.get('/api/projects/:userName', user.service.getProjectsByUserName);
 
 router.get('/api/ashare/:code', user.service.getCompany);
 router.get('/api/roe/:code', user.service.getRoeByCompany);
-router.get('/api/roes/:codesstr', user.service.getRoesByCompanies);
+router.get('/api/roes/:codesstr', stdParam.getRoesByCompanies);
+router.get('/api/roas/:codesstr', stdParam.getRoasByCompanies);
+router.get('/api/epss/:codesstr', stdParam.getEPSsByCompanies);
+router.get('/api/cfpss/:codesstr', stdParam.getCFPSsByCompanies);
+router.get('/api/brgrs/:codesstr', stdParam.getBRGRsByCompanies);
+router.get('/api/npgrs/:codesstr', stdParam.getNPGRsByCompanies);
 router.get('/api/das/:codesstr', user.service.getDAsByCompanies);
 
 router.get('/api/idx-a', stockIdx.getIdxA);

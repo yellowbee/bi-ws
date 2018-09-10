@@ -7,7 +7,7 @@ const Project = require("../models/project");
 const User = require("../models/user");
 const Profile = require("../models/profile");
 const AShare = require("../models/a-share");
-const ROE = require("../models/roe");
+const ROE = require("../models/std-param/roe");
 const DA = require("../models/da");
 const IndexA = require("../models/indexA");
 const querystring = require("querystring");
@@ -119,20 +119,6 @@ let service = {
 
     getRoeByCompany: (req, res) => {
         ROE.findOne({code: req.params.code}, (err, roe) => {
-            if (err) {
-                res.json({result: "Company of specified code not found"});
-            } else {
-                res.json(roe);
-            }
-        });
-    },
-
-    getRoesByCompanies: (req, res) => {
-        let codes = querystring.parse(req.params.codesstr).codes;
-        console.log(codes);
-        ROE.find({
-            'code': {$in: codes}
-        }, (err, roe) => {
             if (err) {
                 res.json({result: "Company of specified code not found"});
             } else {
