@@ -10,6 +10,7 @@ let auth = require('./auth.js');
 let user = require('./users.js');
 let stockIdx = require('./stock-index.js');
 let stdParam = require('./std-param');
+let stdParamPred = require('./std-param-pred');
 /*
  * Routes that can be accessed by any one
  */
@@ -35,6 +36,9 @@ router.get('/api/cfpss/:codesstr', stdParam.getCFPSsByCompanies);
 router.get('/api/brgrs/:codesstr', stdParam.getBRGRsByCompanies);
 router.get('/api/npgrs/:codesstr', stdParam.getNPGRsByCompanies);
 router.get('/api/das/:codesstr', user.service.getDAsByCompanies);
+
+router.get('/api/roes-pred/:codesstr', stdParamPred.getRoesPredByCompanies);
+router.get('/api/roes-hist-pred/:codesstr', stdParamPred.getRoesHistPredByCompanies);
 
 router.get('/api/idx-a', stockIdx.getIdxA);
 router.get('/api/idx-b', stockIdx.getIdxB);
