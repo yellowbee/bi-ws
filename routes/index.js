@@ -11,6 +11,7 @@ let user = require('./users.js');
 let stockIdx = require('./stock-index.js');
 let stdParam = require('./std-param');
 let stdParamPred = require('./std-param-pred');
+let report = require('./report');
 /*
  * Routes that can be accessed by any one
  */
@@ -27,7 +28,8 @@ router.get('/api/user/renew/:token', user.service.renew);
 router.get('/api/projects', user.service.getProjects);
 router.get('/api/projects/:userName', user.service.getProjectsByUserName);
 
-router.get('/api/ashare/:code', user.service.getCompany);
+//router.get('/api/ashare/:code', user.service.getCompany);
+router.get('/api/company-info/:codesstr', report.getBasicInfoByCompanies);
 router.get('/api/roe/:code', user.service.getRoeByCompany);
 router.get('/api/roes/:codesstr', stdParam.getRoesByCompanies);
 router.get('/api/roas/:codesstr', stdParam.getRoasByCompanies);

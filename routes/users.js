@@ -6,7 +6,6 @@ let jwt = require("jsonwebtoken");
 const Project = require("../models/project");
 const User = require("../models/user");
 const Profile = require("../models/profile");
-const AShare = require("../models/a-share");
 const ROE = require("../models/std-param/roe");
 const DA = require("../models/da");
 const IndexA = require("../models/share-index/indexA");
@@ -105,17 +104,6 @@ let service = {
       res.json({ result: null });
     }
   },
-
-    getCompany: (req, res) => {
-        AShare.findOne({code: req.params.code}, (err, co) => {
-            if (err) {
-                res.json({result: "Company of specified code not found"});
-            } else {
-              console.log(co);
-              res.json(co);
-            }
-        });
-    },
 
     getRoeByCompany: (req, res) => {
         ROE.findOne({code: req.params.code}, (err, roe) => {
