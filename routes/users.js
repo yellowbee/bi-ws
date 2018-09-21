@@ -9,7 +9,7 @@ const Profile = require("../models/profile");
 const AShare = require("../models/a-share");
 const ROE = require("../models/std-param/roe");
 const DA = require("../models/da");
-const IndexA = require("../models/indexA");
+const IndexA = require("../models/share-index/indexA");
 const querystring = require("querystring");
 
 let cloudinary = require("cloudinary");

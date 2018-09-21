@@ -1,12 +1,12 @@
-const IndexA = require("../models/indexA");
-const IndexB = require("../models/indexB");
-const IndexMdSm = require("../models/indexMdSm");
-const IndexShA = require("../models/indexShA");
-const IndexShB = require("../models/indexShB");
-const IndexStartup = require("../models/indexStartup");
-const IndexSzA = require("../models/indexSzA");
-const IndexSzB = require("../models/indexSzB");
-const IndexSzMainA = require("../models/indexSzMainA");
+const IndexA = require("../models/share-index/indexA");
+const IndexB = require("../models/share-index/indexB");
+const IndexMdSm = require("../models/share-index/indexMdSm");
+const IndexShA = require("../models/share-index/indexShA");
+const IndexShB = require("../models/share-index/indexShB");
+const IndexStartup = require("../models/share-index/indexStartup");
+const IndexSzA = require("../models/share-index/indexSzA");
+const IndexSzB = require("../models/share-index/indexSzB");
+const IndexSzMainA = require("../models/share-index/indexSzMainA");
 
 let service = {
     getIdxA: (req, res) => {
